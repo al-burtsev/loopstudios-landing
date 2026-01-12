@@ -1,15 +1,18 @@
-import { navList } from '@/src/constants/navigation'
+import Link from 'next/link'
+import { NAV_LINKS } from '@/src/constants/navigation'
 
-const Navigation = () => {
+const Navigation = ({ className }: { className: string }) => {
   return (
-    <nav className='hidden md:flex'>
-      <ul className='flex gap-4 md:gap-8'>
-        {navList.map((item) => (
-          <li key={item.id}>
-            <a href={`#${item.id}`}>{item.label}</a>
-          </li>
-        ))}
-      </ul>
+    <nav className={className}>
+      {NAV_LINKS.map(link => (
+        <Link key={link.id}
+          href={link.href}
+          draggable={false}
+          className='transition-opacity hover:opacity-80 focus-visible:outline-1 focus-visible:outline-white focus-visible:outline-offset-4'
+        >
+          {link.label}
+        </Link>
+      ))}
     </nav>
   )
 }
