@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${alata.variable} ${josefinSans.variable} antialiased`}
+        className={`${alata.variable} ${josefinSans.variable} antialiased selection:bg-fuchsia-300 selection:text-fuchsia-900 dark:selection:text-gray-200 dark:selection:bg-fuchsia-900`}
       >
         {children}
       </body>

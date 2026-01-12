@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import logo from '@/public/logo.svg'
+import logo from '@/public/images/logo.svg'
 
 import Link from 'next/link';
 
@@ -11,7 +11,7 @@ export const Logo = ({ className = "w-32" }: LogoProps) => {
   return (
     <Link
       href="/"
-      className={`inline-block transition-opacity hover:opacity-80 focus-visible:outline-1 focus-visible:outline-white focus-visible:outline-offset-8 ${className}`}
+      className={`inline-block transition-opacity hover:opacity-80 focus-visible:outline-1 focus-visible:outline-fuchsia-300 focus-visible:outline-offset-8 ${className}`}
       aria-label="To the main page"
       draggable={false}
     >

@@ -1,16 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --primary-first: #ffffff;
-  --primary-second: #000000;
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --link-under-color: #ffffff;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-description: var(--descr);
+  --color-main: var(--bg-color);
+  --color-second: var(--text-color);
 
   --font-main: var(--font-alata);
   --font-accent: var(--font-josefin-sans);
@@ -19,28 +17,44 @@
 
   --background-image-hero-mobile: url('../src/assets/images/mobile/image-hero.jpg');
   --background-image-hero-desktop: url('../src/assets/images/desktop/image-hero.jpg');
+
+  --animate-fadeIn: fadeIn 0.5s ease-out backwards;
+
+  --animate-hero-fade-in : hero-fade-in 1.2s ease-out forwards;
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: 'translateY(-10px)';
+    }
+  }
+
+  @keyframes hero-fade-in {
+    0% {
+      opacity: 0.1;
+      transform: scale(1.05);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-color: #121212;
+    --text-color: #f9f9f9;
   }
-}
-
-::selection {
-  color: var(--primary-second);
-  background-color: var(--primary-first);
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--font-alata), sans-serif;
-  background-color: var(--primary-first);
-  color: var(--primary-second)
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 @utility container {
@@ -54,13 +68,5 @@ body {
 
   @variant lg {
     padding-inline: 4rem;
-  }
-}
-
-@utility bg-creation {
-  background-image: var(--bg-mob);
-
-  @variant md {
-    background-image: var(--bg-desk);
   }
 }

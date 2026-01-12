@@ -9,9 +9,9 @@ export const SocialLinks = ({ className }: { className: string }) => {
           key={social.id}
           href={social.href}
           aria-label={`Go to ${social.name}`}
-          className="relative focus-visible:outline-1 focus-visible:outline-white focus-visible:outline-offset-4"
+          className="relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:-bottom-2 after:left-0 after:bg-white after:transition-transform after:duration-300 hover:after:scale-x-100 focus-visible:outline-1 focus-visible:outline-fuchsia-300 focus-visible:outline-offset-4"
         >
-          <social.icon className="w-6 h-6 text-white transition-colors duration-300 hover:text-white/80" />
+          <social.icon className="w-6 h-6 text-white" />
         </Link>
       ))}
     </div>

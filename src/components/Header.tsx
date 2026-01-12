@@ -17,11 +17,11 @@ const Header = () => {
   };
 
   return (
-    <header className='absolute w-full top-8 md:top-16'>
+    <header className='absolute top-8 md:top-16 z-10 w-full'>
       <div className='container flex justify-between items-center'>
         <Logo className="z-50 w-36 md:w-50" />
 
-        <Navigation className="hidden lg:flex gap-8 text-white"/>
+        <Navigation className="hidden lg:flex gap-8 text-second"/>
 
         <div className="lg:hidden">
           <Burger isOpen={isMenuOpen} onClick={toggleMenu} />
